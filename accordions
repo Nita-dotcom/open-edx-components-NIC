@@ -1,0 +1,107 @@
+<p></p>
+<div class="NICAcc" tabindex="0"><strong>Example Title (NB: Title Case)</strong></div>
+<div class="NICPanel">
+<p></p>
+<p>Example content. (NB: Sentence case.)</p>
+<p></p>
+</div>
+<div class="NICAcc" tabindex="0"><strong>Example Title (NB: Title Case)</strong></div>
+<div class="NICPanel">
+<p></p>
+<p>Example content. (NB: Sentence case.)</p>
+<p></p>
+</div>
+<div class="NICAcc" tabindex="0"><strong>Example Title (NB: Title Case)</strong></div>
+<div class="NICPanel">
+<p></p>
+<p>Example content. (NB: Sentence case.)</p>
+<p></p>
+</div>
+<p></p>
+<style><!--
+.NICAcc {
+background-color: #727373 !important;
+border: 2px solid #727373 !important;
+color: #fff;
+cursor: pointer;
+padding: 18px;
+width: 100%;
+box-sizing: border-box;
+border: none;
+text-align: left;
+outline: 2px solid #fff !important;
+font-size: 15px;
+transition: 0.4s;
+}
+ 
+ .NICAcc:focus {
+  outline: 4px solid #6CA543 !important; /* Brighter, more visible focus border */
+}
+
+.NICAcc:after {
+  content: '+';
+  font-size: 19px;
+  color: #FFFFFF;
+  font-weight: bold;
+  float: right;
+  margin-left: 25px;
+}
+
+.activeFaq:after {
+  content: "-";
+  font-size: 19px;
+  color: #FFFFFF;
+  font-weight: bold;
+  float: right;
+  margin-left: 25px;
+}
+
+.NICPanel {
+padding: 18px;
+display: none;
+background-color: white;
+overflow: hidden;
+}
+--></style>
+<script>// <![CDATA[
+var acc = document.getElementsByClassName("NICAcc");
+  var panels = document.getElementsByClassName("NICPanel");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      var panel = this.nextElementSibling;
+      var isActive = this.classList.contains("activeFaq");
+
+      // Close all panels
+      for (var j = 0; j < panels.length; j++) {
+        panels[j].style.display = "none";
+        acc[j].classList.remove("activeFaq");
+      }
+
+      if (!isActive) {
+        panel.style.display = "block";
+        this.classList.add("activeFaq");
+      }
+    });
+
+    acc[i].addEventListener("keypress", function(e) {
+      if (e.key === "Enter") {
+        var panel = this.nextElementSibling;
+        var isActive = this.classList.contains("activeFaq");
+
+        // Close all panels
+        for (var j = 0; j < panels.length; j++) {
+          panels[j].style.display = "none";
+          acc[j].classList.remove("activeFaq");
+        }
+
+        if (!isActive) {
+          panel.style.display = "block";
+          this.classList.add("activeFaq");
+        }
+      }
+    });
+  }// End of For loop
+// ]]></script>
+<p></p>
