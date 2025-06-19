@@ -1,0 +1,155 @@
+<div class="groupsss">
+    <div class="tabz">
+    <div class="tabzlinks" onclick="openTab(event, 'tab1')" onkeydown="handleKeyPress(event, 'tab1')" id="openTabz" tabindex="0" style="height: 54px; width: 33.3%; text-align: center;"><strong>Urban/Urban Core</strong></div>
+    <div class="tabzlinks" onclick="openTab(event, 'tab2')" onkeydown="handleKeyPress(event, 'tab2')" tabindex="0" style="height: 54px; width: 33.3%; text-align: center;"><strong>Suburban</strong><b><br /></b></div>
+    <div class="tabzlinks" onclick="openTab(event, 'tab3')" onkeydown="handleKeyPress(event, 'tab3')" tabindex="0" style="height: 54px; width: 33.3%; text-align: center;"><strong>Rural</strong><b><br /></b></div>
+    </div>
+    <div id="tab1" class="tabzcontent">
+    <div class="text_c">
+    <div class="Panel">
+    <p></p>
+    <p>Urban areas are located within major cities and have high population densities. They also normally have a built-out infrastructure with limited developable land. Urban markets tend to have more public transportation options (e.g., metro, buses, etc.) and are more walkable/bikeable, but are harder to navigate with longer commute times per mile than suburban or rural markets.</p>
+    <p style="text-align: center;"><img src="/static/pedro-lastra-Nyvq2juw4_o-unsplash.jpg" style="width: 70%;" alt="decorative" /></p>
+    <p style="font-size: 0.9em; text-align: center;">Source: Lastra, P. (2016). <em>White and brown city buildings during daytime</em>. <a href="https://unsplash.com/photos/Nyvq2juw4_o" target="_blank">Unsplash</a>.</p>
+    <p>In urban markets, residents may have many choices of competing services within a short distance/commute of their home, and they normally select a service provider in close proximity. As such, urban markets tend to have the smallest PMAs.</p>
+    </div>
+    </div>
+    </div>
+    <div id="tab2" class="tabzcontent">
+    <div class="text_c">
+    <div class="Panel">
+    <p></p>
+    <p>Suburban areas surround urban markets and are more spread out, with lower population densities and more developable land. Most suburban markets still have access to some forms of public transportation but are easier to navigate by car than urban markets given they are more spread out with lower population densities.</p>
+    <p style="text-align: center;"><img src="/static/florian-schmid-EzmfUgcKrt4-unsplash.jpg" style="width: 70%;" alt="decorative" /></p>
+    <p style="font-size: 0.9em; text-align: center;">Source: Schmid, F. (2019). <em>House lot during daytime aerial view photography</em>. <a href="https://unsplash.com/photos/EzmfUgcKrt4" target="_blank">Unsplash</a>.</p>
+    <p>In suburban markets, residents may have several choices of competing services within a short drive of their homes and they typically select a service provider that is convenient to access. The size of the PMA for suburban markets can vary substantially depending on the density of the area and the supply of senior housing properties.</p>
+    </div>
+    </div>
+    </div>
+    <div id="tab3" class="tabzcontent">
+    <div class="text_c">
+    <div class="Panel">
+    <p></p>
+    <p>Rural areas extend past the urban and suburban markets. They have low population densities and significantly more open space. Rural markets generally have little or no access to public transportation but are easy to navigate by car with shorter commute times per mile than urban or suburban markets.</p>
+    <p style="text-align: center;"><img src="/static/rahbek-media-AyULXUmFQgw-unsplash.jpg" style="width: 70%;" alt="decorative" /></p>
+    <p style="font-size: 0.9em; text-align: center;">Source: Rahbek Media. (2019). <em>Top view of plaid field and ocean</em>. <a href="https://unsplash.com/photos/AyULXUmFQgw" target="_blank">Unsplash</a>.</p>
+    <p>In rural areas, it may be many miles between towns large enough to sustain services, and residents are accustomed to driving significant distances to access services. As such, rural markets have the largest PMAs.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    <p></p>
+    <p></p>
+    <style><!--
+    /* General styles */
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    .groupsss:before,
+    .groupsss:after {
+        content: "";
+        display: table;
+    }
+    
+    .groupsss:after {
+        clear: both;
+    }
+    
+    .groupsss {
+        zoom: 1;
+    }
+    
+    .text_c {
+        padding: 16px;
+    }
+    
+    /* Style the tabs */
+    .tabz {
+        display: flex;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+    
+    /* Style the buttons inside the tabs */
+    .tabz .tabzlinks {
+        background-color: #505050;
+        color: #fff;
+        padding: 1rem;
+        flex: 1;
+        border: 0.5px #fff solid;
+        border-bottom: none;
+        cursor: pointer;
+        text-align: center;
+        transition: 0.3s;
+        overflow-wrap: break-word;
+        word-wrap: break-word; 
+    }
+    
+    /* Change background color of buttons on hover */
+    .tabz .tabzlinks:hover {
+        background-color: #000000;
+    }
+    
+    /* Create an active/current "tab" class */
+    .tabz .tabzlinks.active {
+        color: #000;
+        background-color: #6CA543;
+    }
+    
+    /* Style the tab content */
+    .tabzcontent {
+        display: none;
+        width: 100%;
+        border: 2px solid #ccc;
+        padding: 16px;
+    }
+    
+    .tabzcontent.active {
+        display: block;
+    }
+    
+    /* Focus styles */
+    .tabz .tabzlinks:focus {
+        outline: 2px solid #f29e07;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        .tabz {
+            flex-direction: column;
+        }
+    
+        .tabz .tabzlinks {
+            width: 100%;
+            font-size: 0.9rem; 
+            padding: 0.8rem;   
+        }
+    }
+    --></style>
+    <script>// <![CDATA[
+    function openTab(evt, tabName) {
+        var i, tabzcontent, tabzlinks;
+        tabzcontent = document.getElementsByClassName("tabzcontent");
+        for (i = 0; i < tabzcontent.length; i++) {
+          tabzcontent[i].style.display = "none";
+        }
+        tabzlinks = document.getElementsByClassName("tabzlinks");
+        for (i = 0; i < tabzlinks.length; i++) {
+          tabzlinks[i].className = tabzlinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      
+      function handleKeyPress(event, tabName) {
+        if (event.key === "Enter" || event.key === " ") {
+          openTab(event, tabName);
+        }
+      }
+      
+      document.getElementById("openTabz").click();
+    // ]]></script>
+    <p></p>
+    <p></p>
