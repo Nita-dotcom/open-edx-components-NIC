@@ -1,0 +1,209 @@
+<p></p>
+<p></p>
+<div class="container">
+<div class="card" role="button" aria-label="Feasible" aria-expanded="false" onclick="flipCard(this)" onkeydown="handleKeyPress(event, this)" tabindex="0">
+<div class="card-inner">
+<div class="card-front">
+<h2><span style="color: #000;"><strong>Feasible</strong></span></h2>
+</div>
+<div class="card-back">
+<p alt="Does the available data needed to answer your question have sufficient information about the study cohort?"><strong>Does the available data needed to answer your question have sufficient information about the study cohort?</strong></p>
+</div>
+</div>
+</div>
+<div class="card" role="button" aria-label="Flip card Interesting" onclick="flipCard(this)" onkeydown="handleKeyPress(event, this)" tabindex="0">
+<div class="card-inner">
+<div class="card-front">
+<h2><strong><span style="color: #000;">Interesting</span></strong></h2>
+</div>
+<div class="card-back">
+<p alt="Does your question have the potential to engage stakeholders, such as researchers, clinicians, and patients?"><strong>Does your question have the potential to engage stakeholders, such as researchers, clinicians, and patients?</strong></p>
+</div>
+</div>
+</div>
+<div class="card" role="button" aria-label="Flip card Novel" onclick="flipCard(this)" onkeydown="handleKeyPress(event, this)" tabindex="0">
+<div class="card-inner">
+<div class="card-front">
+<h2><strong><span style="color: #000;">Novel</span></strong></h2>
+</div>
+<div class="card-back">
+<p alt="Does your question address an area that has not been fully explored or offers a fresh perspective on an existing issue?"><strong>Does your question address an area that has not been fully explored or offers a fresh perspective on an existing issue?</strong></p>
+</div>
+</div>
+</div>
+<div class="card" role="button" aria-label="Flip card Ethical" onclick="flipCard(this)" onkeydown="handleKeyPress(event, this)" tabindex="0">
+<div class="card-inner">
+<div class="card-front">
+<h2><strong><span style="color: #000;">Ethical</span></strong></h2>
+</div>
+<div class="card-back">
+<p alt="Can your question be investigated in an ethical way?"><strong>Can your question be investigated in an ethical way?</strong></p>
+</div>
+</div>
+</div>
+<div class="card last-card" role="button" aria-label="Flip card Relevant" onclick="flipCard(this)" onkeydown="handleKeyPress(event, this)" tabindex="0">
+<div class="card-inner">
+<div class="card-front">
+<h2><strong><span style="color: #000;">Relevant</span></strong></h2>
+</div>
+<div class="card-back">
+<p alt="Is your question relevant to improving patient lives and the delivery of health services?"><strong>Is your question relevant to improving patient lives and the delivery of health services?</strong></p>
+</div>
+</div>
+</div>
+</div>
+<p></p>
+<p></p>
+<style><!--
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+.card {
+    width: calc(50% - 20px) !important; /* Ensures two cards per row */
+    height: 200px !important;
+    margin: 10px !important;
+    perspective: 1000px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    outline: none !important;
+}
+
+/* Center last card while keeping same width */
+.card.last-card {
+    width: calc(50% - 20px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.card-inner {
+    width: 100% !important;
+    height: 100% !important;
+    transition: transform 0.6s !important;
+    transform-style: preserve-3d !important;
+    position: relative !important;
+}
+
+.card.flip .card-inner {
+    transform: rotateY(180deg) !important;
+}
+
+.card-front, .card-back {
+    width: 100% !important;
+    min-height: 200px !important;
+    position: absolute !important;
+    backface-visibility: hidden !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+.card-front {
+    background-color: #6CA543 !important;
+    color: #ffffff !important;
+}
+
+.card-back {
+    background-color: #f29e07 !important;
+    color: #000000 !important;
+    transform: rotateY(180deg) !important;
+    overflow: hidden !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
+    transition: max-height 0.3s ease-in-out !important;
+}
+
+/* Expand back card height only if content exceeds */
+.card-back p {
+    max-width: 90% !important;
+    word-wrap: break-word !important;
+}
+
+.card.flip .card-back {
+    max-height: none !important;
+}
+
+/* Accessibility: Ensure outline always matches expanded card */
+.card:focus {
+    outline: 3px solid #f29e07 !important; /* Visible focus */
+    outline-offset: 3px !important;
+}
+
+/* Adjust focus outline when flipped */
+.card.flip:focus {
+    outline-offset: 0 !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px) !important;
+    }
+    .card.last-card {
+        width: calc(50% - 20px) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: calc(100% - 20px) !important;
+    }
+    .card.last-card {
+        width: calc(100% - 20px) !important;
+    }
+}
+--></style>
+<p>
+<script>// <![CDATA[
+function flipCard(element) {
+    element.classList.toggle('flip');
+    const isFlipped = element.classList.contains('flip');
+    element.setAttribute('aria-expanded', isFlipped);
+    if (isFlipped) {
+        const backContent = element.querySelector('.card-back');
+        backContent.setAttribute('tabindex', '-1');
+        backContent.focus();
+    } else {
+        element.focus();
+    }
+}
+
+
+function handleKeyPress(event, element) {
+    if (event.key === "Enter" || event.key === " ") {
+        flipCard(element);
+        event.preventDefault();
+    }
+}
+
+function adjustCardHeight(card) {
+    const back = card.querySelector(".card-back");
+    if (card.classList.contains("flip")) {
+        const backHeight = back.scrollHeight;
+        if (backHeight > 200) {
+            back.style.maxHeight = backHeight + "px";
+        }
+    } else {
+        back.style.maxHeight = "200px";
+    }
+}
+// ]]></script>
+</p>
