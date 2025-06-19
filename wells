@@ -1,0 +1,21 @@
+<p></p>
+<div class="divicon_container" style="background-color: #f2f2f2;">
+<div><img style="float: left; width: 10%;" src="/static/asset-v1_nicacad_C01_2023_type_asset_block_NIC_Icons_NIC00_M00_A08.png" alt="" />
+<div style="float: left; width: 80%; margin-left: 2%; margin-top: 23px;">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at feugiat diam, ac congue nisl. Aenean id varius sapien, a consequat lorem. Phasellus justo elit, dictum eget congue quis, viverra vitae sapien.</p>
+</div>
+</div>
+<div style="clear: both;"></div>
+</div>
+<p></p>
+<style><!--
+.divicon_container {
+  padding: 3%;
+}
+
+ @media (max-width: 600px) {
+    img {
+      float: none;
+      width: 100%;
+ }}
+--></style>
